@@ -20,10 +20,6 @@ const getTask = asyncWrapper(async (req, res, next) => {
   }
 
   return next(createCustomError(`No task with that id: ${taskID}`, 404));
-
-  const error = new Error('Not found');
-  error.status = 404;
-  return next(error);
 });
 
 const deleteTask = asyncWrapper(async (req, res) => {
